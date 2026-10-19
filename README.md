@@ -13,7 +13,7 @@
 [![Node](https://img.shields.io/badge/node-%E2%89%A518-e9ece7?style=flat-square&labelColor=101315)](package.json)
 [![Agent-ready](https://img.shields.io/badge/agents-AGENTS.md-f2a93b?style=flat-square&labelColor=101315)](AGENTS.md)
 
-[**Quick start**](#quick-start) · [**The system**](#the-system) · [**API**](#api-reference) · [**Agents**](#built-for-agents) · [**Docs**](#documentation)
+[**Live demo**](https://dabaihk.github.io/dimension-ui/docs/) · [**Quick start**](#quick-start) · [**The system**](#the-system) · [**API**](#api-reference) · [**Agents**](#built-for-agents) · [**Docs**](#documentation)
 
 <br>
 
@@ -335,6 +335,8 @@ strip: no windows — every value is judged against a baseline
 
 ## Documentation
 
+**[Live demo → dabaihk.github.io/dimension-ui/docs](https://dabaihk.github.io/dimension-ui/docs/)**
+
 [`docs/index.html`](docs/index.html) is the full specification, **rendered by the library itself**: colour law, shade scale, ladders, badges, anatomy, marks, variants, and an applied desk with vitals, accounts and legs, and a decisions blotter. Density toggles show the cards with and without strips, footnotes and annotations.
 
 ```bash
@@ -342,7 +344,7 @@ git clone https://github.com/dabaihk/dimension-ui && cd dimension-ui
 npm run dev            # → http://127.0.0.1:4173/docs/
 ```
 
-ES modules don't load from `file://`, so the page has to be served. All figures on it are illustrative demo data.
+To run it locally, serve it: ES modules don't load from `file://`. All figures on it are illustrative demo data.
 
 <br>
 
