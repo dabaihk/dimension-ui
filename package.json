@@ -1,0 +1,50 @@
+{
+  "name": "dimension-ui",
+  "version": "0.1.0",
+  "description": "A rules-first card system for dense, high-stakes dashboards. One card, one question; six colours with one meaning each; five marks; four variants. Zero dependencies.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./element": "./src/element.js",
+    "./tokens.css": "./src/tokens.css",
+    "./dimension.css": "./src/dimension.css"
+  },
+  "files": [
+    "src",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "./src/interact.js",
+    "./src/element.js",
+    "*.css"
+  ],
+  "scripts": {
+    "dev": "node scripts/serve.js",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "dashboard",
+    "design-system",
+    "data-visualization",
+    "metrics",
+    "cards",
+    "ui",
+    "zero-dependency",
+    "ai"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dabaihk/dimension-ui.git"
+  },
+  "homepage": "https://github.com/dabaihk/dimension-ui#readme",
+  "bugs": {
+    "url": "https://github.com/dabaihk/dimension-ui/issues"
+  }
+}

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dimension UI Card System</title>
+<meta name="description" content="A rules-first card system for dense, high-stakes dashboards: one card, one question; six colours with one meaning each; five marks; four variants.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../src/tokens.css">
+<link rel="stylesheet" href="../src/dimension.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div class="page">
+  <nav class="nav" aria-label="Sections">
+    <div class="nav__brand">
+      <div class="nav__name"><span class="nav__mark"></span>Dimension UI</div>
+      <div class="nav__meta">card system · example desk<br>zero dependencies</div>
+    </div>
+    <div class="nav__groups">
+      <div class="nav__group">
+        <div class="nav__h">System</div>
+        <a href="#colour" data-nav="colour">Colour law</a>
+        <a href="#shade" data-nav="shade">Shade scale</a>
+        <a href="#space" data-nav="space">Space &amp; type</a>
+        <a href="#badges" data-nav="badges">Badges</a>
+        <a href="#anatomy" data-nav="anatomy">Card anatomy</a>
+        <a href="#marks" data-nav="marks">Marks</a>
+        <a href="#variants" data-nav="variants">Variants</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__h">Applied</div>
+        <a href="#vitals" data-nav="vitals">Desk vitals</a>
+        <a href="#legs" data-nav="legs">Accounts &amp; legs</a>
+        <a href="#decisions" data-nav="decisions">Decisions</a>
+        <a href="#component" data-nav="component">Component</a>
+        <a href="#removes" data-nav="removes">What it removes</a>
+      </div>
+    </div>
+    <div class="nav__foot">
+      <div class="nav__h" style="padding:0">Card density</div>
+      <label class="toggle">Window strip <input type="checkbox" data-density="strip" checked></label>
+      <label class="toggle">Footnotes <input type="checkbox" data-density="foot" checked></label>
+      <label class="toggle">Annotations <input type="checkbox" data-density="notes" checked></label>
+      <div class="nav__row" style="margin-top:4px"><span id="nav-live"></span><span class="nav__meta">v0.1.0</span></div>
+      <div class="nav__legend" id="nav-legend"></div>
+    </div>
+  </nav>
+
+  <main class="main dx-root">
+  <div class="wrap">
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Dimension UI · card system</div>
+        <h1>One card, one question</h1>
+        <p class="lede">A single card atom with four sanctioned variants, five marks and six colours. Every metric is one value, two sides of one value, or a value across time — and every value is drawn against a baseline it can be judged by.</p>
+      </div>
+      <div class="hero__links">
+        <a class="dx-btn" href="../README.md">README</a>
+        <a class="dx-btn dx-btn--go" href="#component">Use the component</a>
+      </div>
+    </header>
+
+    <section>
+      <div class="sec__head">
+        <div id="colour" class="sec__title">Colour law</div>
+        <div class="sec__note">six hues, each with one meaning — a colour never appears for a reason not listed here</div>
+      </div>
+      <div class="dx-grid" style="--dx-min-col:224px" id="colour-grid"></div>
+      <div class="callout"><b>Retire anything without a meaning.</b> Orange bars on notional (notional is size → cyan), a second green on equity (result → the one favorable hue), decorative chips with no defined meaning — every hue must map to one of the six above or it does not ship. The single exception is an instrument brand mark, which lives inside its own disc and never colours a value, a bar or a rule.</div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="shade" class="sec__title">Shade scale</div>
+        <div class="sec__note">each hue exists at exactly four strengths — a shade is chosen by <em class="hl">role</em>, never by taste</div>
+      </div>
+      <div class="shades" id="shade-table"></div>
+      <div class="dx-grid" style="margin-top:10px" id="tint-examples"></div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="space" class="sec__title">Space &amp; type</div>
+        <div class="sec__note">every measurement on this page comes from these three ladders</div>
+      </div>
+      <div class="dx-grid" id="ladders"></div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="badges" class="sec__title">Badges</div>
+        <div class="sec__note">one geometry · 20px tall, 4px radius, 1px edge — hue says which way, shape says what kind</div>
+      </div>
+      <div class="dx-grid" id="badge-grid"></div>
+    </section>
+
+    <section class="anatomy">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div id="anatomy" class="sec__title">Anatomy</div>
+        <div id="anatomy-card"></div>
+        <div class="small" data-notes>01 label · 02 primary · 03 trend against its own average · 04 window strip with signed deviation · 05 basis + coverage. The 3px rule is the only status signal.</div>
+      </div>
+      <div>
+        <div class="sec__title" style="margin-bottom:13px">Five rules every card obeys</div>
+        <div class="rules">
+          <div><span class="n">01</span><div><h3>Label states the question, not the source</h3><p>Two to three words, uppercase. If the label needs a qualifier it belongs in the footnote.</p></div><div class="ex">Breaks it: <q>Maker rest age</q> and <q>Maker fill age</q> four cards apart, reading identically.</div></div>
+          <div><span class="n">02</span><div><h3>One primary value, in the card's own unit</h3><p>41px mono, unit at 16px. Never two unrelated numbers at the same weight.</p></div><div class="ex">Breaks it: a footnote <q>retained 88.5%</q> that restates the primary verbatim.</div></div>
+          <div><span class="n">03</span><div><h3>Every value carries its own shape</h3><p>A number alone can't be judged. Each card plots the metric against its trailing average — trend for rates, distribution for markout, share for mixes.</p></div><div class="ex">Breaks it: progress bars whose scale is never declared.</div></div>
+          <div><span class="n">04</span><div><h3>Windows are secondary, inside the card</h3><p>10M / 1H / 24H, each with its value and a signed bar for its diff against that window's average. Time is an axis, not a card.</p></div><div class="ex">Breaks it: four aggregation cards repeating the same four metrics — 16 tiles carrying 4 metrics × 4 windows.</div></div>
+          <div><span class="n">05</span><div><h3>Two values only when they answer one question</h3><p>Maker ↔ taker, realized ↔ unrealized, mean ↔ tail. Both sides can carry the same sign, so they are drawn on one shared signed axis rather than mirrored from a centre.</p></div><div class="ex">Breaks it: maker and taker in different sections, so nobody reads the net.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="marks" class="sec__title">Visualization vocabulary</div>
+        <div class="sec__note">five marks, each tied to a shape of question — nothing decorative</div>
+      </div>
+      <div class="dx-grid" style="--dx-min-col:248px" id="mark-grid"></div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="variants" class="sec__title">Variants — the whole set</div>
+        <div class="sec__note">everything on the desk is one of these four</div>
+      </div>
+      <div class="dx-grid" id="variant-grid"></div>
+    </section>
+
+    <section>
+      <div class="sec__head" style="align-items:center;margin-bottom:18px">
+        <div>
+          <div id="vitals" class="sec__title">Applied — desk vitals</div>
+          <div class="sec__lead">17 tiles collapse to 8 cards. Window controls disappear: every card carries its own 10M / 1H / 24H and its own shape. Click any large number for its time series.</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="dx-sub" style="margin:0">Baseline</span>
+          <div class="dx-seg" id="baseline-seg"><button type="button" aria-pressed="true">vs window avg</button><button type="button" aria-pressed="false">vs prior period</button><button type="button" aria-pressed="false">absolute</button></div>
+        </div>
+      </div>
+      <div class="dx-grid" id="vitals-grid"></div>
+      <div class="duo" style="margin-top:12px">
+        <div class="panel" id="markout-panel"></div>
+        <div class="panel" id="score-panel"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="legs" class="sec__title">Applied — accounts &amp; legs</div>
+        <div class="sec__note">the hedge is the unit; the account is how it is funded, the leg is how it is worked</div>
+      </div>
+      <div class="dx-grid" id="legs-grid"></div>
+      <div class="callout" style="border-left-color:var(--dx-flow)"><b>Status is a leg property, not a badge.</b> A status word repeated on every account hides what is still open. Here the P0 / P1 / P2 strip carries complete / active per leg, and only an unclosed leg or an aged P95 turns amber.</div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="decisions" class="sec__title">Applied — decisions</div>
+        <div class="sec__note">one row is one decision · state first, direction second, money last</div>
+      </div>
+      <div class="panel" id="blotter"></div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="component" class="sec__title">Reusable component — card()</div>
+        <div class="sec__note">one function renders every card above · hover a label for its definition, click a number for the series</div>
+      </div>
+      <div class="dx-grid" id="component-grid"></div>
+      <div class="api" style="margin-top:10px">
+        <div><b>Identity</b><code>label · tip · chip · tag<br>tone: favorable | adverse | watch | flow | neutral<br>tinted: boolean</code></div>
+        <div><b>Values</b><code>variant: single | dual | split | state<br>value | values[2] → { sub, v, unit, tone, series, better }</code></div>
+        <div><b>Shape &amp; time</b><code>marks: trend · deviation · bullet · histogram · split<br>windows[] → { win, rows[{ v, d, w, dir }] } · facts[]</code></div>
+        <div><b>Behaviour</b><code>tip → hover definition<br>series → click-to-enlarge chart<br>lint(card) → the rules, as a list of problems</code></div>
+      </div>
+      <pre class="code" style="margin-top:10px" id="code-sample"></pre>
+      <div class="callout" style="border-left-color:var(--dx-fav)"><b>The interaction layer is global, not per card.</b> One engine binds every <code>[data-tip]</code> to a hover definition and every <code>[data-series]</code> to the enlarged chart — window tabs, crosshair readout, full precision and a copyable query. Any number on the page opts in with an attribute.</div>
+    </section>
+
+    <section>
+      <div class="sec__head">
+        <div id="removes" class="sec__title">What the restructure removes</div>
+        <div class="sec__note">applied to a real 17-tile desk</div>
+      </div>
+      <div class="dx-grid" style="--dx-min-col:224px" id="removes-grid"></div>
+    </section>
+
+  </div>
+  </main>
+</div>
+<script type="module" src="demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* Dimension UI — design tokens.
+   Six hues, each with one meaning. Four strengths per hue, chosen by role:
+   tint (surface wash) · edge (1px borders) · dim (secondary span) · base (the value itself). */
+:root {
+  /* favorable — result up, target met; also the buy / long side */
+  --dx-fav-tint: #17210c;
+  --dx-fav-edge: #35471a;
+  --dx-fav-dim: #5e7a2a;
+  --dx-fav: #bff24d;
+
+  /* adverse — result down, budget breached; also the sell / short side */
+  --dx-adv-tint: #24100e;
+  --dx-adv-edge: #4a2724;
+  --dx-adv-dim: #8c3c34;
+  --dx-adv: #ff6b5e;
+
+  /* watch — inside tolerance but trending at a threshold, or a degraded feed */
+  --dx-watch-tint: #221806;
+  --dx-watch-edge: #4a3a18;
+  --dx-watch-dim: #8a6520;
+  --dx-watch: #f2a93b;
+
+  /* size & flow — magnitude with no verdict */
+  --dx-flow-tint: #08222a;
+  --dx-flow-edge: #1d3a40;
+  --dx-flow-dim: #2a7d8c;
+  --dx-flow: #3fd3e8;
+
+  /* structure — counts, denominators, remainders, empty track */
+  --dx-struct: #2c3336;
+
+  /* reference — targets, budgets, medians, zero rules */
+  --dx-ref: #e9ece7;
+
+  /* surfaces */
+  --dx-page: #07080a;
+  --dx-panel: #0c0e10;
+  --dx-card: #101315;
+  --dx-raised: #12161a;
+  --dx-pop: #181c1f;
+  --dx-track: #191d1f;
+  --dx-line: #1d2124;
+  --dx-edge: #23282b;
+  --dx-zero: #2f3639;
+  --dx-dotted: #3a4043;
+
+  /* text */
+  --dx-text: #e9ece7;
+  --dx-text-2: #c8cdc7;
+  --dx-muted: #8b918c;
+  --dx-sub: #7c837e;
+  --dx-faint: #626963;
+  --dx-ghost: #4f5754;
+
+  /* type */
+  --dx-font: Geist, 'Helvetica Neue', Helvetica, sans-serif;
+  --dx-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --dx-fs-primary: 41px;
+  --dx-fs-dual: 30px;
+  --dx-fs-money: 17px;
+  --dx-fs-data: 13px;
+  --dx-fs-label: 11px;
+  --dx-fs-small: 10.5px;
+
+  /* space */
+  --dx-section-gap: 38px;
+  --dx-gutter: 10px;
+  --dx-pad-y: 13px;
+  --dx-pad-x: 14px;
+  --dx-row: 34px;
+  --dx-min-col: 292px;
+
+  /* shape */
+  --dx-r-card: 10px;
+  --dx-r-panel: 8px;
+  --dx-r-badge: 4px;
+  --dx-r-glyph: 3px;
+  --dx-rule: 3px;
+}
