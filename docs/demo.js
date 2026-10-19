@@ -473,7 +473,7 @@ function blotter() {
 /* ---------- component + removes ---------- */
 
 const SAMPLE = `<span class="c">// one import, zero dependencies</span>
-import { card, marks, lint } from 'dimension-ui';
+import { card, marks, lint } from '@dabaihk/dimension-ui';
 
 const fillRate = {
   label: <span class="s">'Fill rate'</span>, tone: <span class="s">'favorable'</span>, chip: <span class="s">'46/46'</span>,

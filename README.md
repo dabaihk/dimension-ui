@@ -6,6 +6,7 @@
 
 **One card, one question** · six colours with one meaning each · five marks · four variants · zero dependencies
 
+[![npm](https://img.shields.io/npm/v/@dabaihk/dimension-ui?style=flat-square&color=bff24d&labelColor=101315)](https://www.npmjs.com/package/@dabaihk/dimension-ui)
 [![License: MIT](https://img.shields.io/badge/license-MIT-bff24d?style=flat-square&labelColor=101315)](LICENSE)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-bff24d?style=flat-square&labelColor=101315)](package.json)
 [![Size](https://img.shields.io/badge/gzip-~19%20kB-3fd3e8?style=flat-square&labelColor=101315)](src)
@@ -74,16 +75,16 @@ Maker ↔ taker, mean ↔ tail, on one shared signed axis and never mirrored.
 ## Quick start
 
 ```bash
-npm install github:dabaihk/dimension-ui
+npm install @dabaihk/dimension-ui
 ```
 
 ```html
-<link rel="stylesheet" href="node_modules/dimension-ui/src/tokens.css">
-<link rel="stylesheet" href="node_modules/dimension-ui/src/dimension.css">
+<link rel="stylesheet" href="node_modules/@dabaihk/dimension-ui/src/tokens.css">
+<link rel="stylesheet" href="node_modules/@dabaihk/dimension-ui/src/dimension.css">
 ```
 
 ```js
-import { card, marks, lint } from 'dimension-ui';
+import { card, marks, lint } from '@dabaihk/dimension-ui';
 
 const fillRate = {
   label: 'Fill rate',                              // the question, 2–3 words
@@ -198,7 +199,7 @@ One engine for the whole page. Nothing is wired per component; any element opts 
 | `data-series="key"` | Click, <kbd>Enter</kbd> or <kbd>Space</kbd> opens the enlarged time series: window tabs, crosshair readout, full-precision rows and a copyable query. <kbd>Esc</kbd> closes it. |
 
 ```js
-import { register } from 'dimension-ui';
+import { register } from '@dabaihk/dimension-ui';
 
 register({
   fillrate: {
@@ -236,7 +237,7 @@ strip: no windows — every value is judged against a baseline
 - **Declarative surface:** `<dx-card>` takes JSON, so an agent can emit markup without writing code.
 
 ```html
-<script type="module" src="node_modules/dimension-ui/src/element.js"></script>
+<script type="module" src="node_modules/@dabaihk/dimension-ui/src/element.js"></script>
 <dx-card><script type="application/json">
   { "label": "Fill rate", "tip": "Venue fills ÷ decisions.",
     "value": { "v": "88.5", "unit": "%" },
